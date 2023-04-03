@@ -37,3 +37,6 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+mid-term/~$_solutions.docx
+.gitignore
+mid-term/my_solutions.docx
