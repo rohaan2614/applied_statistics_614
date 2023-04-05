@@ -141,8 +141,43 @@ if (alpha < p_value) {
 } else {
     cat("null hypothesis REJECTED since p-value < 𝛼\n")
 }
+cat("\n")
+cat("\n")
 
 cat("Question 4\n")
+cat("(a) Parameter of interest is: pi i.e proportion of people. Group 1 is Low Exposure Group\nHypotheses:\n") # nolint: line_length_linter.
+cat("\t𝐻0: π1  = π2 \n")
+cat("\t𝐻1: π1 < π2 \n")
+alpha <- 0.05
+cat("Level of Significance is 𝛼 = ", alpha, "\n")
+cat("(b) Variables:\n")
+n_1 <- 350 + 680
+n_2 <- 320 + 780
+x_1 <- 680
+x_2 <- 780
+p_1 <- x_1 / n_1
+p_2 <- x_2 / n_2
+p_hat <- (x_1 + x_2) / (n_1 + n_2)
+delta_o <- 0
+cat("\tx_1 = ", x_1, "\n")
+cat("\tx_2 = ", x_2, "\n")
+cat("\tn_1 = ", n_1, "\n")
+cat("\tn_2 = ", n_2, "\n")
+cat("\tp_1 = ", p_1, "\n")
+cat("\tp_2 = ", p_2, "\n")
+cat("\tp̂ = ", p_hat, "\n")
+cat("\tΔo = ", delta_o, "\n")
+z_o <- (p_1 - p_2 - delta_o) / sqrt(p_hat * (1 - p_hat) * ((1 / n_1) + (1 / n_2)))
+cat("\t=> z_o = ", z_o, "\n")
+p_value <- pnorm(z_o, lower)
+cat("(c)\n\t=> P-value = ", p_value, "\n")
+cat("(d) ")
+if (p_value > alpha) {
+    cat("FAILED TO REJECT null hypothesis since p-value > 𝛼\n")
+} else {
+    cat("null hypothesis REJECTED since p-value < 𝛼\n")
+}
+cat("(e) It can be stated with 95% confidence that the proportion of of people that had cancer was higher for the high exposure group than the low exposure group.\n")
 cat("\n")
 cat("\n")
 
